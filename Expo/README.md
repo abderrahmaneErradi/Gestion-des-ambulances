@@ -1,31 +1,33 @@
-# Expo React Native Workspace
+# AmbulanceApp
 
-This directory contains a basic Expo managed app scaffold.
+Mobile React Native app for intelligent ambulance fleet management built with Expo managed workflow, TypeScript, React Navigation v6, Zustand, React Query, NativeWind, Expo Location, Expo Notifications, AsyncStorage, Socket.io-client, React Hook Form, and Zod.
 
-Quick start
-
-1. Install dependencies:
+## Setup
 
 ```bash
 cd Expo
 npm install
-```
-
-2. Start Metro / Expo dev tools:
-
-```bash
 npm start
-# or
-npx expo start
 ```
 
-3. Run on a device or simulator using the Expo Dev Tools.
-
-Notes
-- To create the project from scratch using the official tool:
+If the dependency tree needs to be aligned with the current Expo SDK, run:
 
 ```bash
-npx create-expo-app Expo
+npx expo install --fix
 ```
 
-- If you want, I can run `npm install` now. Make sure you have Node.js installed.
+## Mock login accounts
+
+- `admin@ambulance.app` / any password, role `admin`
+- `operator@ambulance.app` / any password, role `operateur`
+- `driver@ambulance.app` / any password, role `conducteur`
+
+## Included screens
+
+Auth, dashboard, live map, mission list/detail, new mission form, fleet, ambulance detail, stats, admin users, driver home, and profile.
+
+## Notes
+
+- Data is seeded from local fixtures and cached with AsyncStorage.
+- Live tracking uses Expo Location polling and optionally Socket.io when `EXPO_PUBLIC_SOCKET_URL` is defined.
+- Charts are rendered with lightweight custom components so the app stays self-contained during bootstrapping.
